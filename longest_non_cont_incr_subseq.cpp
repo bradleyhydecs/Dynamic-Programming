@@ -37,22 +37,22 @@ int longest_incr_sub(int arr[], int size)
 
     // get the longest subsequence from results
     // and keep the index it ends at
-    int starting_point = 0;
+    int longest_end_index = 0;
     for (int i = 0; i < size; i++)
     {
-        if (lengths[i] > starting_point)
-            starting_point = i;
+        if (lengths[i] > longest_end_index)
+            longest_end_index = i;
     }
 
     // print out the actual sequence
-    int i = starting_point;
+    int i = longest_end_index;
     while (i != -1)
     {
         cout << arr[i] << endl;
         i = seq[i];
     }
 
-    return lengths[starting_point];
+    return lengths[longest_end_index];
 }
 
 //
