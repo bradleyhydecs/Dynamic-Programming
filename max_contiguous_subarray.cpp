@@ -7,14 +7,17 @@ using namespace std;
 //
 int max_cont_sub(int arr[], int size)
 {
+    // array storing highest sum at that point
     int maxes[size];
     maxes[0] = arr[0];
 
+    // fill out the array with optimal sums
     for (int i = 1; i < size; i++)
     {
         maxes[i] = max(maxes[i-1] + arr[i], arr[i]);
     }
 
+    // loop over sums, get highest to return
     int maxSum = maxes[0];
     for (int num : maxes)
     {
